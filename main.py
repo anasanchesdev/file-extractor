@@ -21,6 +21,7 @@ dest_button = ps.FolderBrowse('Select', key="dest_dir", font=DEFAULT_FONT)
 
 # line 3
 extract_button = ps.Button('Extract', key='extract_button', font=DEFAULT_FONT)
+exit_button = ps.Button('Exit', key='exit_button', font=DEFAULT_FONT)
 action_text = ps.Text(key='action_text', font=ACTION_FONT)
 
 layout = [
@@ -30,7 +31,7 @@ layout = [
     [archive_input, archive_button],
     [dest_label],
     [dest_input, dest_button],
-    [extract_button, action_text]
+    [extract_button, exit_button, action_text]
 ]
 
 window = ps.Window('File Decompressor', layout=layout)
@@ -55,7 +56,7 @@ while True:
         window['action_text'].update(value=f'"{archive_name}.zip" was decompressed successfully.',
                                      text_color='lime green', font=ACTION_FONT)
 
-    elif events == ps.WIN_CLOSED:
+    elif events == 'exit_button' or events == ps.WIN_CLOSED:
         break
 
 window.close()
