@@ -1,5 +1,4 @@
 import zipfile
-import pathlib
 
 
 def extract_archive(archive_path, dest_dir):
@@ -12,4 +11,4 @@ def extract_archive(archive_path, dest_dir):
 
 
 if __name__ == '__main__':
-    pass
+    extract_archive('files/to-decompress.zip', 'files')
