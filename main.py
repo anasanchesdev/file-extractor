@@ -29,5 +29,9 @@ layout = [
 ]
 
 window = ps.Window('File Decompressor', layout=layout)
-window.read()
+
+while True:
+    events, values = window.read()
+    print(events, values)
+
 window.close()
